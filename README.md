@@ -30,7 +30,6 @@ This project was built to give me practical experience setting up Active Directo
 ---
 
 ## Table of Contents
-
 1. [Project Goals](#project-goals)  
 2. [Lab Environment](#lab-environment)  
 3. [Network Plan](#network-plan)  
@@ -47,7 +46,7 @@ This project was built to give me practical experience setting up Active Directo
 
 ---
 
-## Project Goals
+ ## Project Goals
 - **One Windows Server Domain Controller** providing:
   - Active Directory Domain Services (AD DS)
   - DNS
