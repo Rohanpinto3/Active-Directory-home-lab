@@ -43,7 +43,7 @@ This project was built to give me practical experience setting up Active Directo
 10. [Create the Client VM](#create-the-client-vm)  
 11. [Join the Client to the Domain](#join-the-client-to-the-domain)  
 12. [Verification Checklist](#verification-checklist)    
-13. [Snapshots and Reset Tips](#snapshots-and-reset-tips)
+13. [Snapshots & Reset Tips](#snapshots--reset-tips)
 
 ---
 
@@ -60,7 +60,7 @@ This project was built to give me practical experience setting up Active Directo
 
 ---
 
-## 2. Lab Environment
+## Lab Environment
 
 - Oracle VirtualBox installed
 - Windows Server 2019 ISO
@@ -71,7 +71,7 @@ This project was built to give me practical experience setting up Active Directo
 
 ---
 
-## 3. Network Plan
+## Network Plan
 - Lab subnet: `172.16.0.0/24`  
 - Domain Controller:  
   - NIC 1 → NAT (internet access for the DC)  
@@ -81,7 +81,7 @@ This project was built to give me practical experience setting up Active Directo
 
 ---
 
-## 4. Create the Domain Controller VM
+## Create the Domain Controller VM
 1. Create a new VM for Windows Server in VirtualBox.  
 2. Assign memory (4–6 GB), 2 CPUs, and a 40–60 GB disk.  
 3. Add two network adapters:  
@@ -102,7 +102,7 @@ https://github.com/user-attachments/assets/f90bceed-ddbc-4183-97a0-cd4ffc09117c
 
 ---
 
-## 5. Configure the DC: Name, NICs, Static IP
+## Configure the DC: Name, NICs, Static IP
 1. Rename the computer to `DC` and restart.  
 2. Rename the NICs for clarity:  
    - NAT adapter → `INTERNET`  
@@ -117,7 +117,7 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 
 ---
 
-## 6. Install AD DS and Create the Forest
+## Install AD DS and Create the Forest
 1. In Server Manager, add the role: **Active Directory Domain Services**.  
 2. Promote the server to a domain controller.  
 3. Create a new forest (example: `mydomain.com`).  
@@ -127,7 +127,7 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 <img width="833" height="547" alt="6(2)" src="https://github.com/user-attachments/assets/88976e81-d9fb-45b1-b056-2ccb266a27f7" />
 ---
 
-## 7. Set Up NAT with Routing and Remote Access
+## Set Up NAT with Routing and Remote Access
 1. In Server Manager, add the role: **Remote Access** (with Routing).  
 2. Open the Routing and Remote Access console.  
 3. Run the wizard → choose **NAT**.  
@@ -140,7 +140,7 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 
 ---
 
-## 8. Install and Configure DHCP
+## Install and Configure DHCP
 1. In Server Manager, add the role: **DHCP Server**.  
 2. In the DHCP console, create a new IPv4 scope:  
    - Start: `172.16.0.100`  
@@ -157,7 +157,7 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 
 ---
 
-## 9. Bulk Add 1,000+ Users with PowerShell ISE
+## Bulk Add 1,000+ Users with PowerShell ISE
 **Goal:** Test scalability and automation by creating **1,000 domain users** in Active Directory.  
 
 **Steps:**  
@@ -177,7 +177,7 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 
 ---
 
-## 10. Create the Client VM
+## Create the Client VM
 1. Create a new VM for Windows 10 in VirtualBox.  
 2. Assign memory (4 GB), 2 CPUs, and a 40 GB disk.  
 3. Add one adapter: **Internal Network** (same as the DC’s).  
@@ -189,7 +189,7 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 
 ---
 
-## 11. Join the Client to the Domain
+## Join the Client to the Domain
 1. Confirm the client received an IP in `172.16.0.x` from DHCP.  
 2. Rename the computer to `CLIENT0` (optional).  
 3. Join the domain (`mydomain.com`).  
@@ -203,7 +203,7 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 
 ---
 
-## 12. Verification Checklist
+## Verification Checklist
 **Domain Controller**  
 - INTERNAL adapter = `172.16.0.1`, DNS = `172.16.0.1`  
 - NAT enabled on INTERNET NIC (RRAS running)  
@@ -218,7 +218,7 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 
 ---
 
-## 13. Snapshots & Reset Tips
+## Snapshots & Reset Tips
 - Take a snapshot after each milestone:  
   - Base OS installed  
   - DC promoted  
