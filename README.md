@@ -111,8 +111,7 @@ https://github.com/user-attachments/assets/f90bceed-ddbc-4183-97a0-cd4ffc09117c
    - Subnet mask: `255.255.255.0`  
    - DNS server: `172.0.0.1`
      
-https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
-
+https://github.com/user-attachments/assets/8c774043-6c6f-4e73-97f5-a70cd0520326
 
 ---
 
@@ -227,6 +226,12 @@ https://github.com/user-attachments/assets/72e32d6a-e103-4085-b8f6-525bad50d8e7
 - Roll back if networking or user creation fails.  
 
 ---
+
+
+
+
+
+
 
 
 
